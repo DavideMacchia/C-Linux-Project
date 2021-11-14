@@ -1,17 +1,17 @@
-program : ospedale.o triage.o reparto.o prestazione.o
-	./ospedale
+program : hospital.o triage.o ward.o service.o
+	./hospital
 
-ospedale.o : librerie.h ospedale.c
-	gcc  -o ospedale -Wall -pedantic ospedale.c
+hospital.o : lib/lib.h src/hospital.c
+	gcc  -o hospital -Wall -pedantic hospital.c
 
-triage.o : librerie.h triage.c
+triage.o : lib/lib.h src/triage.c
 	gcc  -o triage -Wall -pedantic triage.c
 
-reparto.o : librerie.h reparto.c
-	gcc  -o reparto -Wall -pedantic reparto.c
+ward.o : lib/lib.h src/ward.c
+	gcc  -o ward -Wall -pedantic ward.c
 
-prestazione.o : librerie.h prestazione.c
-	gcc  -o prestazione -Wall -pedantic prestazione.c 
+service.o : lib/lib.h src/service.c
+	gcc  -o service -Wall -pedantic service.c
 	
 clean:
-	rm -f ospedale triage reparto prestazione a.out
+	rm -f hospital triage ward service a.out

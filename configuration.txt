@@ -1,3 +1,0 @@
-patients, 10
-departments, 5
-seconds, 10
